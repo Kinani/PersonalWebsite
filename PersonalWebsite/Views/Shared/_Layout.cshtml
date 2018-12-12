@@ -7,47 +7,41 @@
     <base target="_self">
     <meta name="description" content="Abdelrahman El Kinani personal website" />
     <meta name="google" value="notranslate">
-    @*<link rel="shortcut icon" href="/images/.png">*@
+    <link rel="shortcut icon" href="/img/ext.jpg">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row wrapper">
-            <aside class="col-12 col-sm-3 p-0 bg-dark">
-                <nav class="navbar navbar-expand-sm navbar-dark bg-dark align-items-start flex-sm-column flex-row">
-                    <a class="navbar-brand" href="#"><i class="fa fa-bullseye fa-fw"></i> Brand</a>
-                    <a href class="navbar-toggler" data-toggle="collapse" data-target=".sidebar">
-                        <span class="navbar-toggler-icon"></span>
-                    </a>
-                    <div class="collapse navbar-collapse sidebar">
-                        <ul class="flex-column navbar-nav w-100 justify-content-between">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <aside class="col-12 col-md-2 p-0 bg-light fixed-top">
+                <nav class="navbar navbar-expand navbar-dark bg-light flex-md-column flex-row align-items-start py-2">
+                    <div class="collapse navbar-collapse align-items-start">
+                        <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                             <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-heart-o fa-fw"></i> <span class="">Link</span></a>
+                                <a class="nav-link pl-0 text-nowrap" href="#"> <span class="font-weight-bold text-dark">Kinani</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link pl-0 dropdown-toggle text-nowrap" href="#m1" data-parent="#navbar1" data-toggle="collapse" data-target="#m1" aria-expanded="false">
-                                    <i class="fa fa-address-card-o fa-fw"></i> <span class=""> Link</span>
-                                </a>
-                                <div class="collapse" id="m1">
-                                    <ul class="flex-column nav">
-                                        <a class="nav-link px-0 text-truncate" href="#">Sub</a>
-                                        <a class="nav-link px-0 text-truncate" href="#">Sub longer</a>
-                                    </ul>
-                                </div>
+                                <a class="nav-link pl-0" href="#"><i class="fa fa-home fa-fw text-dark"></i><span class="d-none d-md-inline text-dark"> Main</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-book fa-fw"></i> <span class="">Link</span></a>
+                                <a class="nav-link pl-0" href="#"><i class="fa fa-code fa-fw text-dark"></i> <span class="d-none d-md-inline text-dark"> Projects</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link pl-0" href="#"><i class="fa fa-heart fa-fw"></i> <span class="">Link</span></a>
+                                <a class="nav-link pl-0" href="#"><i class="fa fa-pencil fa-fw text-dark"></i> <span class="d-none d-md-inline text-dark"> Blog</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" href="#"><i class="fa fa-user fa-fw text-dark"></i> <span class="d-none d-md-inline text-dark"> About</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-0" href="#"><i class="fa fa-paper-plane fa-fw text-dark"></i> <span class="d-none d-md-inline text-dark"> Contact</span></a>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </aside>
-            <main class="col bg-faded py-3">
+            <main class="col offset-md-2 bg-faded py-3">
                 @RenderBody()
             </main>
         </div>
@@ -55,10 +49,5 @@
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/popper/umd/popper.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('main').height($(window).height());
-        })
-    </script>
 </body>
 </html>

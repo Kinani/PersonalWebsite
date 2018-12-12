@@ -25,7 +25,12 @@
     {
       "library": "font-awesome@4.7.0",
       "destination": "wwwroot/lib/font-awesome",
-      "files": ["css/font-awesome.min.css"]
+      "files": [
+        "css/font-awesome.min.css",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff2"
+      ]
     }
   ]
 }
