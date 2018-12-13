@@ -15,7 +15,7 @@
 }
 
     .description h1 {
-        color: #F97300;
+        color: #10828C;
     }
 
     .description p {
@@ -26,9 +26,9 @@
     }
 
     .description button {
-        border: 1px solid #F97300;
+        border: 1px solid #10828C;
         /*background: #F97300;*/
-        color: #F97300;
+        color: #10828C;
     }
 
 @media (max-width: 576px) {
