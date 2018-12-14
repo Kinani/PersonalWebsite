@@ -1,7 +1,45 @@
-﻿
-@{
-    ViewData["Title"] = "Contact";
-}
-
-<h1>Contact</h1>
-
+﻿<link rel="stylesheet" href="~/css/contact.css" />
+<div class="contact-form">
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h1>Get in Touch</h1>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 right">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" name="">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com" name="email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control form-control-lg">
+                        </textarea>
+                    </div>
+                    <input type="submit" class="btn btn-outline-dark btn-block" value="Send" name="">
+                </div>
+            </div>
+        </form>
+        <div class="social-container">
+            <div id="social-bar">
+                <a href="https://www.facebook.com/abdelrahman.kinani" target="_blank" class="text-dark">
+                    <i class="fa fa-facebook-official text-dark" aria-hidden="true"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://twitter.com/Kinani95" target="_blank" class="text-dark">
+                    <i class="fa fa-twitter-square text-dark" aria-hidden="true"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="https://github.com/Kinani" target="_blank" class="text-dark">
+                    <i class="fa fa-github text-dark" aria-hidden="true"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:kinani95@outlook.com" target="_blank" class="text-dark">
+                    <i class="fa fa-envelope text-dark" aria-hidden="true"></i>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
