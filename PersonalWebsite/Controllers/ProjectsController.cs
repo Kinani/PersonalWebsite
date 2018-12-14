@@ -32,5 +32,9 @@ namespace PersonalWebsite.Controllers
         {
             return View();
         }
+        public IActionResult Inception()
+        {
+            return View();
+        }
     }
 }
