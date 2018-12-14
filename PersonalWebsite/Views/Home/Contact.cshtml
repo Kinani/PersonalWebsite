@@ -18,6 +18,7 @@
                         </textarea>
                     </div>
                     <input type="submit" class="btn btn-outline-dark btn-block" value="Send" name="">
+                    <div class="g-recaptcha" data-sitekey="@ViewData["ReCaptchaKey"]"></div>
                 </div>
             </div>
         </form>
@@ -43,3 +44,5 @@
         </div>
     </div>
 </div>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
