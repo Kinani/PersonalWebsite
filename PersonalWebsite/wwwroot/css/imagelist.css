@@ -1,0 +1,17 @@
+﻿
+.imageslist {
+    /*margin: 4em 0;*/
+    position: relative;
+}
+
+    /*.imageslist h1 {
+        color: #10828C;
+        margin: 2em;
+    }*/
+
+    .imageslist .imgdiv {
+        /*height: 15rem;*/
+        /*width: 100%;
+        margin: 1em;*/
+        margin-bottom: 5px;
+    }
