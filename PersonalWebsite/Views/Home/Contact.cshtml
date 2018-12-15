@@ -1,26 +1,32 @@
 ﻿<link rel="stylesheet" href="~/css/contact.css" />
 <div class="contact-form">
     <div class="container">
-        <form>
+        <form action="/Home/Contact" method="post">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <h1>Get in Touch</h1>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 right">
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" name="">
+                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" name="name">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com" name="email">
+                        <input type="email" class="form-control form-control-lg" placeholder="Your Email@email.com" name="email">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control form-control-lg">
-                        </textarea>
+                        <textarea class="form-control form-control-lg" placeholder="Subject" name="subject"></textarea>
                     </div>
                     <input type="submit" class="btn btn-outline-dark btn-block" value="Send" name="">
                     <div class="g-recaptcha" data-sitekey="@ViewData["ReCaptchaKey"]"></div>
+                    @{
+                        if (ViewData["CaptchaError"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @ViewData["CaptchaError"]
+                            </div>
+                        }
+                    }
                 </div>
-            </div>
         </form>
         <div class="social-container">
             <div id="social-bar">

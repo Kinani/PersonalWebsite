@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using PersonalWebsite.Utils;
 
 namespace PersonalWebsite
 {
@@ -31,13 +33,9 @@ namespace PersonalWebsite
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //services.AddSingleton<IConfiguration>(new ConfigurationBuilder()
-            //    .SetBasePath(Directory.GetCurrentDirectory())
-            //    .AddJsonFile($"appsettings.json")
-            //    .Build());
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<IEmailService, EmailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
