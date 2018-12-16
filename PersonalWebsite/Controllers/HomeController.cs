@@ -57,7 +57,7 @@ namespace PersonalWebsite.Controllers
             var path = Path.Combine(
                            wwwrootPath,"docs", fileName);
             byte[] fileBytes = System.IO.File.ReadAllBytes(path);
-            return File(fileBytes, "application/x-msdownload", fileName);
+            return File(fileBytes, "application/pdf", fileName);
         }
 
         [HttpGet]
