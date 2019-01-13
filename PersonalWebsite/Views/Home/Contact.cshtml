@@ -1,20 +1,28 @@
-﻿<link rel="stylesheet" href="~/css/contact.css" />
+﻿@model ContactModel
+<link rel="stylesheet" href="~/css/contact.css" />
 <div class="contact-form">
     <div class="container">
         <form action="/Home/Contact" method="post">
+            @Html.AntiForgeryToken()
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <h1>Get in Touch</h1>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 right">
+                    @Html.ValidationMessageFor(m => m.name, null, new { @style = "color:red;" })
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" name="name">
+                        @*<input type="text" class="form-control form-control-lg" placeholder="Your Name" name="name">*@
+                        <input asp-for="name" class="form-control form-control-lg" placeholder="Your Name" />
                     </div>
+                    @Html.ValidationMessageFor(m => m.email, null, new { @style = "color:red;" })
                     <div class="form-group">
-                        <input type="email" class="form-control form-control-lg" placeholder="Your Email@email.com" name="email">
+                        @*<input type="email" class="form-control form-control-lg" placeholder="Your Email@email.com" name="email">*@
+                        <input asp-for="email" class="form-control form-control-lg" placeholder="Your Email@email.com" />
                     </div>
+                    @Html.ValidationMessageFor(m => m.subject, null, new { @style = "color:red;" })
                     <div class="form-group">
-                        <textarea class="form-control form-control-lg" placeholder="Subject" name="subject"></textarea>
+                        @*<textarea class="form-control form-control-lg" placeholder="Subject" name="subject"></textarea>*@
+                        <textarea asp-for="subject" class="form-control form-control-lg" placeholder="Subject"></textarea>
                     </div>
                     <input type="submit" class="btn btn-outline-dark btn-block" value="Send" name="">
                     <div class="g-recaptcha" data-sitekey="@ViewData["ReCaptchaKey"]"></div>
@@ -26,7 +34,11 @@
                             </div>
                         }
                     }
+                    @*<span asp-validation-for="name"></span> <br />*@
+                    @*<span asp-validation-for="email"></span><br />*@
+                    @*<span asp-validation-for="subject"></span>*@
                 </div>
+            </div>
         </form>
         <div class="social-container">
             <div id="social-bar">

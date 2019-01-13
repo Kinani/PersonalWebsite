@@ -68,7 +68,8 @@ namespace PersonalWebsite.Controllers
         }
 
         [HttpPost]
-        public IActionResult Contact(ContactModel contactdata)
+        [ValidateAntiForgeryToken]
+        public IActionResult Contact([Bind("name", "email", "subject")]ContactModel contactdata)
         {
             ViewData["ReCaptchaKey"] = _configuration.GetSection("GoogleReCaptcha:key").Value;
             if (ModelState.IsValid)
@@ -105,7 +106,7 @@ namespace PersonalWebsite.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View("Index");
+            return View();
         }
 
         public static bool ReCaptchaPassed(string gRecaptchaResponse, string secret, ILogger logger)
