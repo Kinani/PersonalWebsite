@@ -18,6 +18,16 @@
       ]
     },
     {
+      "library": "jquery-validate@1.19.0",
+      "destination": "wwwroot/js/jquery-validate",
+      "files": [ "jquery.validate.min.js" ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/js/jquery-validation-unobtrusive",
+      "files": ["jquery.validate.unobtrusive.min.js"]
+    },
+    {
       "library": "popper.js@1.14.6",
       "destination": "wwwroot/lib/popper",
       "files": [ "umd/popper.min.js" ]

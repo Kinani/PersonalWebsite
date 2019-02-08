@@ -41,10 +41,12 @@ namespace PersonalWebsite.Controllers
         {
             return View();
         }
+        [HttpGet("about")]
         public IActionResult About()
         {
             return View();
         }
+        [HttpGet("portfolio")]
         public IActionResult Portfolio()
         {
             return View();
@@ -60,14 +62,14 @@ namespace PersonalWebsite.Controllers
             return File(fileBytes, "application/pdf", fileName);
         }
 
-        [HttpGet]
+        [HttpGet()]
         public IActionResult Contact()
         {
             ViewData["ReCaptchaKey"] = _configuration.GetSection("GoogleReCaptcha:key").Value;
             return View();
         }
 
-        [HttpPost]
+        [HttpPost()]
         [ValidateAntiForgeryToken]
         public IActionResult Contact([Bind("name", "email", "subject")]ContactModel contactdata)
         {
@@ -81,7 +83,6 @@ namespace PersonalWebsite.Controllers
                     ))
                 {
                     ModelState.AddModelError(string.Empty, "You failed the CAPTCHA, YOU ROBOT.");
-                    ViewData["CaptchaError"] = "You failed the CAPTCHA, YOU ROBOT.";
                     return View();
                 }
 
@@ -99,7 +100,7 @@ namespace PersonalWebsite.Controllers
                 newEmail.FromAddresses.Add(webappemail);
 
                 newEmail.Subject = contactdata.name;
-                newEmail.Content = string.Format("Email: {0} \nSubject:\n{1}", contactdata.email, contactdata.subject);
+                newEmail.Content = string.Format("Email: {0} <br>Subject:<br>{1}", contactdata.email, contactdata.subject);
 
                 _emailService.Send(newEmail);
 
