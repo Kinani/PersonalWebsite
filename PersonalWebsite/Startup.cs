@@ -31,30 +31,6 @@ namespace PersonalWebsite
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddHsts(options =>
-            {
-                options.Preload = true;
-                options.IncludeSubDomains = true;
-                options.MaxAge = TimeSpan.FromDays(60);
-                //options.ExcludedHosts.Add("example.com");
-                //options.ExcludedHosts.Add("www.example.com");
-            });
-            if (!_hostingEnvironment.IsDevelopment())
-            {
-                services.AddHttpsRedirection(options =>
-                {
-                    options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
-                    options.HttpsPort = 443;
-                });
-            }
-            else
-            {
-                services.AddHttpsRedirection(options =>
-                {
-                    options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-                    options.HttpsPort = 5001;
-                });
-            }
             services.AddSingleton(Configuration);
             services.AddTransient<IEmailService, EmailService>();
         }
@@ -69,10 +45,8 @@ namespace PersonalWebsite
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
